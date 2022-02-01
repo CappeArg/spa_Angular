@@ -1,0 +1,23 @@
+<h1>Buscar: {{ termino }}</h1>
+<hr>
+
+<div class="row" *ngIf="busqueda.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el término {{ termino }}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 animated fadeIn" *ngFor="let buscado of busqueda let i=index">
+        <img class="card-img-top img-fluid" [src]="buscado.img" [alt]="buscado.nombre">
+        <div class="card-block">
+            <h5 class="card-title">{{ buscado.nombre }}</h5>
+            <p class="card-text">{{ buscado.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ buscado.aparicion }}</small></p>
+            <div class="d-grid gap-2">
+                <!-- <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary">Ver más...</button> -->
+                <!-- <a [routerLink]="['/heroe', i]" href="" class="btn btn-outline-primary">ver mas link..</a> -->
+            </div>
+        </div>
+    </div>

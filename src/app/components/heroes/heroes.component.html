@@ -1,0 +1,15 @@
+<h1>Héroes de <small>Marvel y DC</small></h1>
+<hr>
+<div class="row">
+    <div class="col-md-4 animated fadeIn" *ngFor="let heroe of heroes let i=index">
+        <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
+        <div class="card-block">
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+            <div class="d-grid gap-2">
+                <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary">Ver más...</button>
+                <!-- <a [routerLink]="['/heroe', i]" href="" class="btn btn-outline-primary">ver mas link..</a> -->
+            </div>
+        </div>
+    </div>
